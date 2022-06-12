@@ -1,0 +1,195 @@
+@font-face {
+    font-family: GalanoGrostesque;
+    src: url('/assets/font/GalanoGrotesque-ExtraLight.ttf'),url('/assets/font/GalanoGrotesque-ExtraLight.woff');
+}
+
+.about-page{
+    /* background-color: rgba(0, 0, 0, 0.9); */
+    background-image: url('/assets/img/photos/about.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: black;
+    color: white;
+    min-height: 100vh;
+    max-width: 100vw;
+    margin: 0;
+    padding: 0;
+   /* overflow: hidden !important; */
+}
+.about-side{
+    /* width: 20%; */
+    /* height: 100vh; */
+    padding-top: 30px;
+    padding-left: 38px;
+}
+
+ .about-side h3{
+    margin-top: 28px;
+ }
+ .about-side ul{
+     list-style-type: none;
+     margin-top: 28px;
+     padding-left: 0px;
+ }
+ .about-side ul li{
+     padding: 10px 0px;
+     color: #b2bec3;
+     color: #7d7d7d;
+    font-family: GalanoGrostesque;
+    line-height: 16px;
+    letter-spacing: 0.03em;     
+    font-weight: 400;
+    text-transform: uppercase;
+    font-style: normal;
+ }
+ .biodata{
+     margin-top: 30px;
+ }
+ .about-side ul li:last-child{
+     position: absolute;
+     bottom: 40px;
+ }
+ .about-side ul li a{
+     text-decoration: none;
+     color: #b2bec3;
+ }
+ .active{
+  color: white;
+  font-weight: 700;
+  line-height: 16px;
+ letter-spacing: 0.03em;     
+ text-transform: uppercase;
+ font-style: normal;
+ }
+/*
+.working-div{
+    display: flex;
+    width: 100%;
+    
+}
+*/
+.image{
+    height: 100vh;
+    width: 100%;
+}
+.image img{
+    width: 100%;
+    height: 100%;
+}
+.resp-page{
+    display: none !important;
+}
+
+@media (max-width:1024px) {
+    .about-side{
+        padding-left: 22px;
+        }
+        .about-side ul li:last-child{
+            bottom: 22px;
+        }
+}
+
+
+@media (max-width:1000px) {
+    .about-side{
+    padding-left: 18px;
+    }  
+
+} 
+
+
+
+@media (max-width:832px) {
+        .about-side ul li{
+        font-size: 14px;
+    }
+}
+@media (max-width: 768px) {
+    .about-page{
+        background-image: none;
+    }
+  .about-side, .image{
+      display: none;
+
+  }
+  .resp-page{
+      display: inline-flex !important;
+      flex-direction: column;
+      margin-top: -8px;
+      padding: 0px 20px;
+      height: 100vh !important;
+  }
+  .header-section{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0px;
+  }
+  .header-section h3{
+      /* margin-top: 8px; */
+      z-index: 100;
+  }
+  .profile{
+      width: 100%;
+      height: 100%;
+      background-image: url('/assets/img/photos/about-mobile.png') !important;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: contain;
+  }  
+  .mainMenu li{
+   list-style-type: none;
+  } 
+  .mainMenu li a{
+      text-decoration: none;
+      color: #b2bec3;
+  }
+  .openMenu {
+    font-size: 2rem;
+    margin: 40px 12px;
+    /* display: none; */
+    cursor: pointer;
+  }
+  .mainMenu .closeMenu{
+    font-size: 2rem;
+    /* display: none; */
+    cursor: pointer;
+    display: block;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+  }
+  .mainMenu {
+    height: 100%;
+    position: fixed;
+    top: 0px;
+    right: 0px;
+    left: 0px;
+    z-index: 10;
+    flex-direction: column;
+    /* justify-content: center;
+    align-items: center; */
+    background: rgb(0, 0, 0);
+    /* transition: top 1s ease 0s; */
+    display: none;
+  }
+  
+  /* .mainMenu .closeMenu {
+  
+  } */
+  .closeMenu{
+    margin-top: -18px;
+  }
+   .resp-menu{
+      padding-top: 110px !important; 
+      padding-left: -30px !important;
+   }
+   .resp-menu li{
+    margin-bottom: 12px;
+
+   }
+  .openMenu {
+    display: block;
+  }
+}

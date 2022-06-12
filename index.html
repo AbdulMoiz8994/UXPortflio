@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <script src="https://cdn.jsdelivr.net/npm/universalsmoothscroll@latest/universalsmoothscroll-min.js"></script>
+    <link rel="stylesheet" href="./assets/css/mainPage.css" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+      integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+      @font-face {
+        font-family: GalanoGrostesque;
+        src: url("/assets/font/GalanoGrotesque-ExtraLight.ttf"),
+          url("/assets/font/GalanoGrotesque-ExtraLight.woff");
+      }
+      body {
+        margin: 0;
+        padding: 0;
+        background-image: url("/assets/img/photos/fade_background.png");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-color: rgba(0, 0, 0, 0.9);
+        color: white;
+        height: 100vh;
+        min-width: 100vw;
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        overflow-y: hidden;
+        -ms-overflow-style: none;
+        scrollbar-width: none; /* Firefox */
+      }
+
+      .outer-wrapper {
+        width: auto;
+        height: 100vh; /*  Changed to vh */
+        width: 100vw; /* Added */
+        /*transform: rotate(-90deg) translateX(-100vh); ROTATING containers brakes 90% of scrolling APIs
+  transform-origin: top left;*/
+        overflow-y: scroll;
+        overflow-x: hidden;
+        position: absolute;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+        /*scroll-behavior: smooth; ISN'T NEEDED FOR MY API */
+      }
+
+      ::-webkit-scrollbar {
+        display: none;
+      }
+
+      .wrapper {
+        display: flex;
+        flex-direction: row;
+        gap: 8px;
+        height: 100vh;
+        /*width: auto; NOT NEEDED IF WE USE FLEX-SHRINK 0
+        transform: rotate(90deg) translateY(-100vh); ROTATING containers brakes 90% of scrolling APIs
+        transform-origin: top left;*/
+        margin: 0; /* not really needed */
+        padding: 0; /* not really needed */
+      }
+
+      .section {
+        color: #000;
+        flex-shrink: 0; /* ADDED insted of the width/height of the wrapper */
+        height: 100%;
+        margin-right: 4px;
+      }
+
+      .section img {
+        height: 100%;
+        color: #000;
+        flex-shrink: 0; /* ADDED insted of the width/height of the wrapper */
+        height: 100%;
+        margin-right: 4px;
+      }
+
+      h2 {
+        text-align: center;
+        font-size: 200px;
+        margin: 0;
+      }
+
+      /* MENU  _________________________ */
+
+      .logo {
+        float: left;
+      }
+
+      nav {
+        width: 100%;
+      }
+
+      /* HEADER */
+
+      header {
+        float: left;
+        width: 100%;
+        position: absolute;
+        z-index: 9999;
+      }
+
+      .Btn {
+        position: fixed;
+        top: 30px;
+        left: 20px;
+        display: none;
+        border-radius: 50%;
+        cursor: pointer;
+        z-index: 1000;
+        height: 34px;
+        width: 34px;
+        background-color: #7d7d7d;
+        border-radius: 50%;
+        color: white;
+        cursor: pointer;
+        justify-content: center;
+        align-items: center;
+        border: none;
+        outline: none;
+        opacity: 1;
+        animation-name: fadeInOpacity;
+        animation-iteration-count: 1;
+        animation-timing-function: linear;
+        animation-duration: 1s;
+      }
+
+      @keyframes fadeInOpacity {
+        0% {
+          opacity: 0;
+        }
+        100% {
+          opacity: 1;
+        }
+      }
+      @media (max-width: 768px) {
+        .wrapper {
+          flex-direction: column;
+          margin-top: 0px;
+          padding: 0 10px !important;
+        }
+        .sider {
+          display: none;
+        }
+
+        .wrapper img {
+          max-height: 500px !important;
+          width: 100% !important;
+        }
+        .outer-wrapper {
+          overflow-x: hidden;
+        }
+        .Btn {
+          visibility: hidden !important;
+        }
+
+        .header-section {
+          display: flex;
+        }
+      }
+
+      /* HEADER LARGE */
+
+      /* UNORDERED LIST */
+    </style>
+  </head>
+  <body onload="init()">
+    <!-- Resposve Site -->
+    <div class="header-section">
+      <img src="./assets/img/photos/mainlogo.png" class="mainlogo" alt="" />
+      <div class="hamburger">
+        <div class="openMenu"><i class="fa fa-bars"></i></div>
+      </div>
+      <ul class="mainMenu">
+        <li><a href="./mainPage.html" class="active">LIFE+</a></li>
+        <li><a href="./Pop.html">POP</a></li>
+        <li><a href="./mixedMedia.html">MIXED MEDIA</a></li>
+        <li class="biodata"><a href="./About.html">BIO & CONTACT</a></li>
+        <div class="closeMenu"><i class="fa fa-times"></i></div>
+      </ul>
+    </div>
+    <main class="outer-wrapper">
+      <div class="wrapper">
+        <article id="a"></article>
+        <article class="sidebar">
+          <div>
+            <img
+              src="./assets/img/photos/mainlogo.png"
+              class="mainlogo"
+              alt=""
+              loading="lazy"
+            />
+            <ul>
+              <li>
+                <a href="./mainPage.html" id="start" class="active">LIFE+</a>
+              </li>
+              <li><a href="./Pop.html">POP</a></li>
+              <li><a href="./mixedMedia.html">MIXED MEDIA</a></li>
+              <li class="biodata"><a href="./About.html">BIO & CONTACT</a></li>
+              <li>
+                <img src="./assets/img/photos/card.png" width="30px" alt="" />
+              </li>
+            </ul>
+          </div>
+        </article>
+      </div>
+    </main>
+
+    <!-- MENU _____________________ -->
+
+    <header class="large">
+      <div class="container">
+        <nav>
+          <a href="#a" class="Btn">
+            <i class="fa-solid fa-chevron-left"></i>
+          </a>
+        </nav>
+      </div>
+    </header>
+  </body>
+
+  <script>
+    /* UPDATED 2022 ANSWER */
+
+    let image_list = [
+      "/assets/img/photos/f1.png",
+      "./assets/img/photos/embryonic_1.png",
+      "./assets/img/photos/f4.png",
+      "./assets/img/photos/embryonic_4.png",
+      "./assets/img/photos/f5.png",
+      "./assets/img/photos/f6.png",
+      "/assets/img/photos/f1.png",
+      "./assets/img/photos/embryonic_1.png",
+      "./assets/img/photos/f4.png",
+      "./assets/img/photos/embryonic_4.png",
+      "./assets/img/photos/f5.png",
+      "./assets/img/photos/f6.png",
+    ];
+
+    function init() {
+      image_list.forEach((src, i) => {
+        var elem = document.createElement("img");
+        elem.setAttribute("src", src);
+        elem.setAttribute("height", "100%");
+        elem.setAttribute("width", "auto");
+        elem.setAttribute("loading", "lazy");
+        elem.setAttribute("alt", "image");
+        document.getElementsByClassName("wrapper")?.[0]?.appendChild(elem);
+      });
+      /*
+       * Variables preparation
+       */
+      let yourWrapperElement =
+        document.getElementsByClassName("outer-wrapper")[0];
+      let whateverEaseFunctionYouWant = (remaningScrollDistance) => {
+        return remaningScrollDistance / 15 + 1;
+      };
+      //Added support for navbar menu's smooth scrolling
+      uss.hrefSetup();
+
+      //   document.getElementsByClassName("wrapper")?.[0].appendChild(divs);
+
+      /*
+       * As you asked for, we only apply the custom scrolling for desktop devices
+       * by using the "wheel" event instead of the "scroll" or "touchmove" events.
+       */
+      let mybutton = document.getElementsByClassName("Btn")[0];
+
+      yourWrapperElement.addEventListener(
+        "wheel",
+        (event) => {
+          if (yourWrapperElement.scrollLeft > 20) {
+            mybutton.style.display = "flex";
+          } else {
+            mybutton.style.display = "none";
+          }
+          console.log({ event });
+          /*
+           * We want to overwrite the default scrolling behaviour
+           * of your outer-wrapper component.
+           */
+          event.preventDefault();
+          event.stopPropagation();
+          uss.scrollXBy(event.deltaY, yourWrapperElement, null, false);
+          //   uss.scrollYBy(event.deltaY, yourWrapperElement, null, false);
+        },
+        { passive: false }
+      );
+
+      mybutton.addEventListener(
+        "click",
+        (event) => {
+          setTimeout(() => {
+            mybutton.style.display = "none";
+          }, 1000);
+          /*
+           * We want to overwrite the default scrolling behaviour
+           * of your outer-wrapper component.
+           */
+        },
+        { passive: false }
+      );
+
+      /*
+       * We apply a the custom ease function
+       * which will be used whenever our component is scrolled by the API
+       */
+      uss.setXStepLengthCalculator(
+        whateverEaseFunctionYouWant,
+        yourWrapperElement
+      );
+    }
+  </script>
+  <script src="./assets/js/bio.js"></script>
+</html>
